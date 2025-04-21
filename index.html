@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url='https://apps.apple.com/app/apple-store/id6736928388?pt=127382831&ct=prepsolver&mt=8'" />
+    <script>
+        function detectPlatform() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            if (userAgent.includes('android')) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=app.yolkai';
+            } else {
+                window.location.href = 'https://apps.apple.com/app/apple-store/id6736928388?pt=127382831&ct=prepsolver&mt=8';
+            }
+        }
+        window.onload = detectPlatform;
+    </script>
     <title>Redirecting...</title>
 </head>
 <body>
-    <p>If you are not redirected, <a href="https://apps.apple.com/app/apple-store/id6736928388?pt=127382831&ct=prepsolver&mt=8">click here</a>.</p>
+    <p>If you are not redirected, <a href="#" onclick="detectPlatform()">click here</a>.</p>
 </body>
 </html>
